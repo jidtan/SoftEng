@@ -30,7 +30,7 @@
 
 	</head>
 
-	<body>
+	<body onload="codeAddress()">
 
 		<!-- Header -->
 			<header id="header">
@@ -39,13 +39,6 @@
 				</nav>
 				<a href="index.html" class="logo">adVenture</a>
 			</header>
-
-<script type="text/javascript"> 
-document.getElementById(".gmnoprint"){
-
-
-}
-</script>
 
 		<!-- Google Map -->
 		      <div id="panel">
@@ -74,16 +67,6 @@ document.getElementById(".gmnoprint"){
 					<input type="submit" value="Submit">
 				</form>
 
-
-		<!-- Menu -->
-			<nav id="menu">
-				<ul class="links">
-					<li><a href="index.html">Home</a></li>
-				</ul>
-				<ul class="actions vertical">
-					<li><a href="#" class="button fit">Login</a></li>
-				</ul>
-			</nav>
 
 		<!-- Two -->
 			<section id="two" class="wrapper style1 special">
