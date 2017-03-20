@@ -30,7 +30,7 @@
 
 	</head>
 
-	<body>
+	<body onload="codeAddress()">
 
 		<!-- Header -->
 			<header id="header">
@@ -41,13 +41,11 @@
 			</header>
 
 <script type="text/javascript"> 
-document.getElementById(".gmnoprint"){
 
-
-}
 </script>
 
 		<!-- Google Map -->
+
 		      <div id="panel">
       <input id="city_country" type="textbox" value="Berlin, Germany">
       <input type="button" value="Geocode" onclick="codeAddress()">
