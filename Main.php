@@ -9,22 +9,8 @@
 		<style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
-#mapCanvas {
-    width: 100%;
-    height: 600px;
-    float: left;
-  }
-  #infoPanel {
-    float: left;
-    margin-left: 10px;
-  }
-  #infoPanel div {
-    margin-bottom: 5px;
-  }
-  #gmnoprint {
-    visibility: hidden;
 
-  }
+
   
     </style>
 
@@ -37,43 +23,40 @@
 				<a href="Main.php" class="logo">adVenture</a>
 			</header>
 
-<<<<<<< HEAD
-<script type="text/javascript"> 
 
-</script>
-
-=======
->>>>>>> refs/remotes/origin/new
 		<!-- Google Map -->
 
-		      <div id="panel">
-      <input id="city_country" type="textbox" value="Cebu, Philippines">
-      <input type="button" value="Geocode" onclick="codeAddress()">
+		      
+      <input id="city_country" type="textbox" value="Cebu, Philippines" placeholder="Location"onfocus="if(this.placeholder  == 'Location') { this.placeholder = ''; } " onblur="if(this.placeholder == '') { this.placeholder = 'Location'; } ">
+      <input type="button" value="Locate" onclick="codeAddress()" >
+          
+          <input id="asking" type="textbox"  value="Question/Phrase/Words"onfocus="if(this.value  == 'Question/Phrase/Words') { this.value = ''; } " onblur="if(this.value == '') { this.value = 'Question/Phrase/Words'; } ">
+          <input type="button" value="Submit" onclick="myFunction()">
+        
+  
+  <div id="myDIV">
+    <div id="answers">The rising Business in Cebu is Restaurant</div>
+    <input id="btnclose" type="button" value="Close" onclick="closePanel()">
   </div>  
+
   <div id="mapCanvas"></div>
+  
   <div id="infoPanel">
-    <b>Marker status:</b>
-    <div id="markerStatus"><i>Click and drag the marker.</i></div>
-    <b>Current position:</b>
-      <div id="info"></div>
       <b>Closest matching address:</b>
     <div id="address"></div>
     </div>
-
-
-
-
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwLwfdkbXWNpjlDmiH77iTvBI3YbCRkyI&libraries=places&callback=initAutocomplete"
+<div id="panelbar"></div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwLwfdkbXWNpjlDmiH77iTvBI3YbCRkyI&libraries=places&callback=initAutocomplete"
          async defer></script>
 
-			    <form action="/suggestAnswers.php">
-					Question: <input type="text"  value="Question"><br>
-					<input type="submit" value="Submit">
-				</form>
 
 
-		<!-- Two -->
+    
+
+			    
+
+
+		<!-- Two --><div><br></div>
 			<section id="two" class="wrapper style1 special">
 				<div class="inner">
 					<h2>adVenture</h2>
@@ -83,9 +66,9 @@
 
 		<!-- Three -->
 
-			<!-- Footer -->
+			<!-- Footer -->  
 			<section id="footer">
-				<div class="inner">
+				<div class="inner"> 
 					<div class="copyright">
 						&copy; 2017 <a href="https://templated.co/">adVenture All Rights Reserved</a>
 					</div>
@@ -99,7 +82,7 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
       <script type="text/javascript">
-        var geocoder;
+    var geocoder;
     var map;
     var marker;
 
@@ -184,6 +167,19 @@
     function updateMarkerAddress(str) {
       document.getElementById('address').innerHTML = str;
     }
+
+function myFunction() {
+    var x = document.getElementById('myDIV');
+    if (x.style.display === 'none') {
+        x.style.display = 'block';
+    } else {
+        x.style.display = 'none';
+    }
+}
+function closePanel() {
+    var x = document.getElementById('myDIV');
+        x.style.display = 'none';
+}
 
           </script>
 
