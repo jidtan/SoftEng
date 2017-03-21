@@ -26,13 +26,13 @@
 
 		<!-- Google Map -->
 
-		      
-      <input id="city_country" type="textbox" value="Cebu, Philippines" placeholder="Location"onfocus="if(this.placeholder  == 'Location') { this.placeholder = ''; } " onblur="if(this.placeholder == '') { this.placeholder = 'Location'; } ">
-      <input type="button" value="Locate" onclick="codeAddress()" >
+		   <div id = "inputs">   
+          <input id="city_country" type="textbox" value="Cebu, Philippines" placeholder="Location"onfocus="if(this.placeholder  == 'Location') { this.placeholder = ''; } " onblur="if(this.placeholder == '') { this.placeholder = 'Location'; } ">
+          <input type="button" value="Locate" onclick="codeAddress()" >
           
           <input id="asking" type="textbox"  value="Question/Phrase/Words"onfocus="if(this.value  == 'Question/Phrase/Words') { this.value = ''; } " onblur="if(this.value == '') { this.value = 'Question/Phrase/Words'; } ">
           <input type="button" value="Submit" onclick="myFunction()">
-        
+        </div>
   
   <div id="myDIV">
     <div id="answers">The rising Business in Cebu is Restaurant</div>
@@ -46,7 +46,7 @@
     <div id="address"></div>
     </div>
 <div id="panelbar"></div>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwLwfdkbXWNpjlDmiH77iTvBI3YbCRkyI&libraries=places&callback=initAutocomplete"
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwLwfdkbXWNpjlDmiH77iTvBI3YbCRkyI&libraries=places"
          async defer></script>
 
 
@@ -133,6 +133,8 @@
         geocodePosition(marker.getPosition());
         marker.setPosition(e.latLng);
       map.panTo(marker.getPosition()); 
+      closePanel();
+
       }); 
       
         } else {
@@ -170,11 +172,7 @@
 
 function myFunction() {
     var x = document.getElementById('myDIV');
-    if (x.style.display === 'none') {
         x.style.display = 'block';
-    } else {
-        x.style.display = 'none';
-    }
 }
 function closePanel() {
     var x = document.getElementById('myDIV');
