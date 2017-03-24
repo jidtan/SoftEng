@@ -1,45 +1,45 @@
 <!DOCTYPE HTML>
 <html>
-  <head>
-    <title>adVenture</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="assets/css/main.css" />
+	<head>
+		<title>adVenture</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
 
-    <style>
-    header{
-      background-image: "wallpaper.jpg";
-    }
-    table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-    }
+		<style>
+		header{
+			background-image: "wallpaper.jpg";
+		}
+		table {
+		    font-family: arial, sans-serif;
+		    border-collapse: collapse;
+		    width: 100%;
+		}
 
-    td, th {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 3px;
-    }
+		td, th {
+		    border: 1px solid #dddddd;
+		    text-align: left;
+		    padding: 3px;
+		}
 
-    tr:nth-child(even) {
-        background-color: "duck.jpg";
-    }
-    </style>
+		tr:nth-child(even) {
+		    background-color: "duck.jpg";
+		}
+		</style>
 
-  </head>
+	</head>
 
-  <body onload="codeAddress()">
+	<body onload="codeAddress()">
 
-    <!-- Header -->
-      <header id="header">
-        <a href="Main.php" class="logo">adVenture</a>
-      </header>
+		<!-- Header -->
+			<header id="header">
+				<a href="Main.php" class="logo">adVenture</a>
+			</header>
 
 
-    <!-- Google Map -->
+		<!-- Google Map -->
 
-       <div id = "inputs">   
+		   <div id = "inputs">   
           <input id="city_country" type="textbox" value="Cebu, Philippines" placeholder="Location"onfocus="if(this.placeholder  == 'Location') { this.placeholder = ''; } " onblur="if(this.placeholder == '') { this.placeholder = 'Location'; } ">
           <input type="button" value="Locate" onclick="codeAddress()" >
           
@@ -48,69 +48,69 @@
         </div>
 
 
-      <div id="myDIV">
-      <div>These are the businesses that are available in the place</div>
-          <div>
-            <table>
-              <tr>
-                <a>Business Name:</a> <td>Coffee Prince</td>
-              </tr>
-              <tr>
-                <a>Location:</a> <td>Osmena blvd</td>
-              </tr>
-              <tr>
-                <a>Business Name:</a> <td>Starbucks</td>
-              </tr>
-              <tr>
-                <a>Location:</a> <td>Osmena blvd</td>
-              </tr>
-              <tr>
-                <td>Choco na Gatas</td>
-              </tr>
-            </table>
-          </div>
-          <input id="btnclose" type="button" value="Close" onclick="closePanel()">
-      </div>  
+		  <div id="myDIV">
+		  <div>These are the businesses that are available in the place</div>
+			    <div>
+			    	<table>
+			    		<tr>
+			    			<td>Coffee Prince</td>
+			    		</tr>
+			    		<tr>
+			    			<td>Coffee Talk</td>
+			    		</tr>
+			    		<tr>
+			    			<td>Starbucks</td>
+			    		</tr>
+			    		<tr>
+			    			<td>Cappuccino</td>
+			    		</tr>
+			    		<tr>
+			    			<td>Choco na Gatas</td>
+			    		</tr>
+			    	</table>
+			    </div>
+			    <input id="btnclose" type="button" value="Close" onclick="closePanel()">
+		  </div>  
 
-      <div id="mapCanvas"></div>
-      
-      <div id="infoPanel">
-          <b>Closest matching address:</b>
-        <div id="address"></div>
-        </div>
-    <div id="panelbar"></div>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwLwfdkbXWNpjlDmiH77iTvBI3YbCRkyI&libraries=places"
-             async defer></script>
+		  <div id="mapCanvas"></div>
+		  
+		  <div id="infoPanel">
+		      <b>Closest matching address:</b>
+		    <div id="address"></div>
+		    </div>
+		<div id="panelbar"></div>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwLwfdkbXWNpjlDmiH77iTvBI3YbCRkyI&libraries=places"
+		         async defer></script>
     
 
-          
+			    
 
 
-    <!-- Two --><div><br></div>
-      <section id="two" class="wrapper style1 special">
-        <div class="inner">
-          <h2>adVenture</h2>
-            <p>adVenture is a website that enables the users to find the right business to be having in that specific area.<br />This system is capable of suggesting and providing the best business for your needs.</p>
-        </div>    
-      </section>
+		<!-- Two --><div><br></div>
+			<section id="two" class="wrapper style1 special">
+				<div class="inner">
+					<h2>adVenture</h2>
+						<p>adVenture is a website that enables the users to find the right business to be having in that specific area.<br />This system is capable of suggesting and providing the best business for your needs.</p>
+				</div>    
+			</section>
 
-    <!-- Three -->
+		<!-- Three -->
 
-      <!-- Footer -->  
-      <section id="footer">
-        <div class="inner"> 
-          <div class="copyright">
-            &copy; 2017 <a href="https://templated.co/">adVenture All Rights Reserved</a>
-          </div>
-        </div>
-      </section> 
+			<!-- Footer -->  
+			<section id="footer">
+				<div class="inner"> 
+					<div class="copyright">
+						&copy; 2017 <a href="https://templated.co/">adVenture All Rights Reserved</a>
+					</div>
+				</div>
+			</section> 
 
-    <!-- Scripts -->
-      <script src="assets/js/jquery.min.js"></script>
-      <script src="assets/js/jquery.scrolly.min.js"></script>
-      <script src="assets/js/skel.min.js"></script>
-      <script src="assets/js/util.js"></script>
-      <script src="assets/js/main.js"></script>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
       <script type="text/javascript">
     var geocoder;
     var map;
@@ -211,5 +211,5 @@ function closePanel() {
 
           </script>
 
-  </body>
+	</body>
 </html>
