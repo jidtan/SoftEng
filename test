@@ -1,66 +1,63 @@
+<?php
+
+?>
+
 <!DOCTYPE HTML>
 <html>
-  <head>
-    <title>adVenture</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="assets/css/main.css" />
+	<head>
+		<title>adVenture</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
 
-    <style>
-    header{
-      background-image: "wallpaper.jpg";
-    }
-    table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-    }
+		<style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
 
-    td, th {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 3px;
-    }
 
-    tr:nth-child(even) {
-        background-color: "duck.jpg";
-    }
+  
     </style>
 
-  </head>
+	</head>
 
-  <body onload="codeAddress()">
+	<body onload="codeAddress()">
 
-    <!-- Header -->
-      <header id="header">
-        <a href="Main.php" class="logo">adVenture</a>
-      </header>
+		<!-- Header -->
+			<header id="header">
+				<a href="Main.php" class="logo">adVenture</a>
+			</header>
 
 
-    <!-- Google Map -->
+		<!-- Google Map -->
 
-       <div id = "inputs">   
+		   <div id = "inputs">   
           <input id="city_country" type="textbox" value="Cebu, Philippines" placeholder="Location"onfocus="if(this.placeholder  == 'Location') { this.placeholder = ''; } " onblur="if(this.placeholder == '') { this.placeholder = 'Location'; } ">
           <input type="button" value="Locate" onclick="codeAddress()" >
           
           <input id="asking" type="textbox"  value="Question/Phrase/Words"onfocus="if(this.value  == 'Question/Phrase/Words') { this.value = ''; } " onblur="if(this.value == '') { this.value = 'Question/Phrase/Words'; } ">
-          <input type="button" value="Submit" onclick="myFunction()" >
+          <input type="button" value="Submit" onclick="myFunction()">
         </div>
-<<<<<<< HEAD
   
   <div id="myDIV">
-    <div id="question" ></div>
-    <div id="answers">
-    <table ></table>
-    </div>  
+    <div id="answers">The rising Business in Cebu is Restaurant</div>
     <input id="btnclose" type="button" value="Close" onclick="closePanel()">
-
   </div>  
-=======
->>>>>>> origin/master
+
+  <div id="mapCanvas"></div>
+  
+  <div id="infoPanel">
+      <b>Closest matching address:</b>
+    <div id="address"></div>
+    </div>
+<div id="panelbar"></div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwLwfdkbXWNpjlDmiH77iTvBI3YbCRkyI&libraries=places"
+         async defer></script>
+<>
+    
+
+			    
 
 
-<<<<<<< HEAD
 		<!-- Two --><div><br></div>
 			<section id="two" class="wrapper style1 special">
 				<div class="inner">
@@ -86,73 +83,7 @@
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-=======
-      <div id="myDIV">
-      <div>These are the businesses that are available in the place</div>
-          <div>
-            <table>
-              <tr>
-                <a>Business Name:</a> <td>Coffee Prince</td>
-              </tr>
-              <tr>
-                <a>Location:</a> <td>Osmena blvd</td>
-              </tr>
-              <tr>
-                <a>Business Name:</a> <td>Starbucks</td>
-              </tr>
-              <tr>
-                <a>Location:</a> <td>Osmena blvd</td>
-              </tr>
-              <tr>
-                <td>Choco na Gatas</td>
-              </tr>
-            </table>
-          </div>
-          <input id="btnclose" type="button" value="Close" onclick="closePanel()">
-      </div>  
-
-      <div id="mapCanvas"></div>
-      
-      <div id="infoPanel">
-          <b>Closest matching address:</b>
-        <div id="address"></div>
-        </div>
-    <div id="panelbar"></div>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwLwfdkbXWNpjlDmiH77iTvBI3YbCRkyI&libraries=places"
-             async defer></script>
-    
-
-          
-
-
-    <!-- Two --><div><br></div>
-      <section id="two" class="wrapper style1 special">
-        <div class="inner">
-          <h2>adVenture</h2>
-            <p>adVenture is a website that enables the users to find the right business to be having in that specific area.<br />This system is capable of suggesting and providing the best business for your needs.</p>
-        </div>    
-      </section>
-
-    <!-- Three -->
-
-      <!-- Footer -->  
-      <section id="footer">
-        <div class="inner"> 
-          <div class="copyright">
-            &copy; 2017 <a href="https://templated.co/">adVenture All Rights Reserved</a>
-          </div>
-        </div>
-      </section> 
-
-    <!-- Scripts -->
-      <script src="assets/js/jquery.min.js"></script>
-      <script src="assets/js/jquery.scrolly.min.js"></script>
-      <script src="assets/js/skel.min.js"></script>
-      <script src="assets/js/util.js"></script>
-      <script src="assets/js/main.js"></script>
->>>>>>> origin/master
       <script type="text/javascript">
-
     var geocoder;
     var map;
     var marker;
@@ -204,7 +135,7 @@
         geocodePosition(marker.getPosition());
         marker.setPosition(e.latLng);
       map.panTo(marker.getPosition()); 
-      closePanel(); 
+      closePanel();
 
       }); 
       
@@ -244,37 +175,13 @@
 function myFunction() {
     var x = document.getElementById('myDIV');
         x.style.display = 'block';
-        displayquestion()
-
-    var ques= document.getElementById('asking').value;
-    var vb = "Restaurant is the top rising business in Cebu?";
-
-    var poultry = "Company A";
-
-    var t = document.getElementById("answers").innerHTML = poultry;
-    if(ques.includes("What is the top rising business in Cebu?")){
-            document.getElementById("answers").innerHTML = vb;
-    }
-    else if(ques.includes("poultry")){
-       var row = table.insertRow(0);
-       var cell1 = row.insertCell(0);
-      cell1.innerHTML= poultry;
-    var row1 = table.insertRow(1);
-    cell1.innerHTML= "Company B";
-    }   
-
 }
 function closePanel() {
     var x = document.getElementById('myDIV');
         x.style.display = 'none';
 }
-function displayquestion(){
-  var x = document.getElementById('asking').value
-  document.getElementById("question").innerHTML = x;
-
-}
 
           </script>
 
-  </body>
+	</body>
 </html>
