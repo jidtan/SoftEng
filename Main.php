@@ -31,12 +31,16 @@
           <input type="button" value="Locate" onclick="codeAddress()" >
           
           <input id="asking" type="textbox"  value="Question/Phrase/Words"onfocus="if(this.value  == 'Question/Phrase/Words') { this.value = ''; } " onblur="if(this.value == '') { this.value = 'Question/Phrase/Words'; } ">
-          <input type="button" value="Submit" onclick="myFunction()">
+          <input type="button" value="Submit" onclick="myFunction()" >
         </div>
   
   <div id="myDIV">
-    <div id="answers">The rising Business in Cebu is Restaurant</div>
+    <div id="question" ></div>
+    <div id="answers">
+    <table ></table>
+    </div>  
     <input id="btnclose" type="button" value="Close" onclick="closePanel()">
+
   </div>  
 
   <div id="mapCanvas"></div>
@@ -48,13 +52,6 @@
 <div id="panelbar"></div>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwLwfdkbXWNpjlDmiH77iTvBI3YbCRkyI&libraries=places"
          async defer></script>
-
-
-
-    
-
-			    
-
 
 		<!-- Two --><div><br></div>
 			<section id="two" class="wrapper style1 special">
@@ -82,6 +79,7 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
       <script type="text/javascript">
+
     var geocoder;
     var map;
     var marker;
@@ -133,7 +131,7 @@
         geocodePosition(marker.getPosition());
         marker.setPosition(e.latLng);
       map.panTo(marker.getPosition()); 
-      closePanel();
+      closePanel(); 
 
       }); 
       
@@ -173,10 +171,34 @@
 function myFunction() {
     var x = document.getElementById('myDIV');
         x.style.display = 'block';
+        displayquestion()
+
+    var ques= document.getElementById('asking').value;
+    var vb = "Restaurant is the top rising business in Cebu?";
+
+    var poultry = "Company A";
+
+    var t = document.getElementById("answers").innerHTML = poultry;
+    if(ques.includes("What is the top rising business in Cebu?")){
+            document.getElementById("answers").innerHTML = vb;
+    }
+    else if(ques.includes("poultry")){
+       var row = table.insertRow(0);
+       var cell1 = row.insertCell(0);
+      cell1.innerHTML= poultry;
+    var row1 = table.insertRow(1);
+    cell1.innerHTML= "Company B";
+    }   
+
 }
 function closePanel() {
     var x = document.getElementById('myDIV');
         x.style.display = 'none';
+}
+function displayquestion(){
+  var x = document.getElementById('asking').value
+  document.getElementById("question").innerHTML = x;
+
 }
 
           </script>

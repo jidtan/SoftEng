@@ -3241,19 +3241,24 @@
   #myDIV{
     width: 40%;
     height: 600px;
-    padding: 50px 0;
+    padding: 10px 0;
     text-align: center;
     background-color: lightblue;
     z-index: 1;
     position: absolute;
     display: none;
   }
-  #answers{
+  #answers tr td{
+  	margin-right: 10px;
+  	margin-left:  10px;
+  	padding: 50px;
   	border: 1px;
   	border-radius: 20px;
   	background-color: white;
   	height: 40px;
   	text-align: center;	
+  	width: 90%;
+
   }
     #btnclose{
   	float: bottom;
@@ -3261,4 +3266,9 @@
   }
   #inputs{
   	align-items: center;
+  }
+  #question{
+  		font-style: italic;
+  		margin-bottom: 20px;
+
   }
