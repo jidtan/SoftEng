@@ -41,7 +41,7 @@
 
        <div id = "inputs">   
           <input id="city_country" type="textbox" value="Cebu, Philippines" placeholder="Location"onfocus="if(this.placeholder  == 'Location') { this.placeholder = ''; } " onblur="if(this.placeholder == '') { this.placeholder = 'Location'; } ">
-          <input type="button" value="Locate" onclick="codeAddress()" >
+          <input type="button" value="Locate" onclick="codeAddress(document.getElementById('city_country').value)" >
           
           <input id="asking" type="textbox"  value="Question/Phrase/Words"onfocus="if(this.value  == 'Question/Phrase/Words') { this.value = ''; } " onblur="if(this.value == '') { this.value = 'Question/Phrase/Words'; } ">
           <input type="button" value="Submit" onclick="myFunction()">
@@ -50,27 +50,31 @@
 
       <div id="myDIV">
       <div>These are the businesses</div>
+      <table>
+      <td>
           <div>
-            <table>
-              <tr>
-                <a>Business Name:</a> <td>Coffee Prince</td>
-              </tr>
-              <tr>
-                <a>Location:</a> <td>Osmena blvd</td>
-              </tr>
-              <tr>
-                <a>Business Name:</a> <td>Starbucks</td>
-              </tr>
-              <tr>
-                <a>Location:</a> <td>Osmena blvd</td>
-              </tr>
-              <tr>
-                <td>Choco na Gatas</td>
-              </tr>
-            </table>
+            <div id = "contan" text-align="center" value="C0246 Osmeña Blvd, Cebu City, 6000 Cebu" onclick="codeAddress(document.getElementById().value)">
+                <th align="right" border-radius:30px>
+                <img src="http://travelfoodblog.com/wp-content/uploads/2014/09/Photo-9-6-14-8-43-52-PM.jpg" alt="" border=3 height=100 width=100 ></img>
+                </th>
+                <div>
+                <div text-align="center">Coffee Prince</div>
+                <div>0246 Osmeña Blvd, Cebu City, 6000 Cebu</div>
+              </div>
+        </div>
+      </td>
+                <div>Osmena blvd</div>  
+                
+           </div>
+           
           </div>
           <input id="btnclose" type="button" value="Close" onclick="closePanel()">
-      </div>  
+           
+      </div>
+
+
+
+
 
       <div id="mapCanvas"></div>
       
@@ -116,10 +120,11 @@
     var map;
     var marker;
 
-    codeAddress = function () {
+    codeAddress = function (address) {
         geocoder = new google.maps.Geocoder();
       
-      var address = document.getElementById('city_country').value;
+       var address = document.getElementById('city_country').value;
+
       geocoder.geocode( { 'address': address}, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
           map = new google.maps.Map(document.getElementById('mapCanvas'), {
@@ -141,7 +146,7 @@
           });
           updateMarkerPosition(results[0].geometry.location);
           geocodePosition(results[0].geometry.location);
-            
+          
           // Add dragging event listeners.
       google.maps.event.addListener(marker, 'dragstart', function() {
         updateMarkerAddress('Dragging...');
