@@ -44,12 +44,51 @@
           <input type="button" value="Locate" onclick="codeAddress()" >
           
           <input id="asking" type="textbox"  value="Question/Phrase/Words"onfocus="if(this.value  == 'Question/Phrase/Words') { this.value = ''; } " onblur="if(this.value == '') { this.value = 'Question/Phrase/Words'; } ">
-          <input type="button" value="Submit" onclick="myFunction()">
+          <input type="button" value="Submit" onclick="myFunction()" >
         </div>
+<<<<<<< HEAD
+  
+  <div id="myDIV">
+    <div id="question" ></div>
+    <div id="answers">
+    <table ></table>
+    </div>  
+    <input id="btnclose" type="button" value="Close" onclick="closePanel()">
+
+  </div>  
+=======
+>>>>>>> origin/master
 
 
+<<<<<<< HEAD
+		<!-- Two --><div><br></div>
+			<section id="two" class="wrapper style1 special">
+				<div class="inner">
+					<h2>adVenture</h2>
+						<p>adVenture is a website that enables the users to find the right business to be having in that specific area.<br />This system is capable of suggesting and providing the best business for your needs.</p>
+				</div>    
+			</section>
+
+		<!-- Three -->
+
+			<!-- Footer -->  
+			<section id="footer">
+				<div class="inner"> 
+					<div class="copyright">
+						&copy; 2017 <a href="https://templated.co/">adVenture All Rights Reserved</a>
+					</div>
+				</div>
+			</section> 
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+=======
       <div id="myDIV">
-      <div>These are the businesses</div>
+      <div>These are the businesses that are available in the place</div>
           <div>
             <table>
               <tr>
@@ -111,7 +150,9 @@
       <script src="assets/js/skel.min.js"></script>
       <script src="assets/js/util.js"></script>
       <script src="assets/js/main.js"></script>
+>>>>>>> origin/master
       <script type="text/javascript">
+
     var geocoder;
     var map;
     var marker;
@@ -163,7 +204,7 @@
         geocodePosition(marker.getPosition());
         marker.setPosition(e.latLng);
       map.panTo(marker.getPosition()); 
-      closePanel();
+      closePanel(); 
 
       }); 
       
@@ -203,10 +244,34 @@
 function myFunction() {
     var x = document.getElementById('myDIV');
         x.style.display = 'block';
+        displayquestion()
+
+    var ques= document.getElementById('asking').value;
+    var vb = "Restaurant is the top rising business in Cebu?";
+
+    var poultry = "Company A";
+
+    var t = document.getElementById("answers").innerHTML = poultry;
+    if(ques.includes("What is the top rising business in Cebu?")){
+            document.getElementById("answers").innerHTML = vb;
+    }
+    else if(ques.includes("poultry")){
+       var row = table.insertRow(0);
+       var cell1 = row.insertCell(0);
+      cell1.innerHTML= poultry;
+    var row1 = table.insertRow(1);
+    cell1.innerHTML= "Company B";
+    }   
+
 }
 function closePanel() {
     var x = document.getElementById('myDIV');
         x.style.display = 'none';
+}
+function displayquestion(){
+  var x = document.getElementById('asking').value
+  document.getElementById("question").innerHTML = x;
+
 }
 
           </script>
